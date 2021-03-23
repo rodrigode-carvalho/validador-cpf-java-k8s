@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rodrigodecarvalho-nginx
+  labels:
+    app: label-pod-rodrigodecarvalho-nginx
+spec:
+  containers:
+    - name: container-pod-nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
