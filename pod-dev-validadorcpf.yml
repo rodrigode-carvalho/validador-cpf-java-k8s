@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rodrigo-dev-validadorcpf
+  labels:
+    app: label-pod-rodrigo-dev-validadorcpf
+spec:
+  containers:
+    - name: pod-dev-java
+      image: rodrigodecarvalho/validador-cpf-turma-devops
+      ports:
+        - containerPort: 8081
+

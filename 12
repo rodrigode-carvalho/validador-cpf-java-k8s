@@ -1,0 +1,45 @@
+>Heroku-build
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+git pull --force
+./mvnw package
+
+
+>Heroku-tdd
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+./mvnw test
+
+
+##Heroku-bdd
+#shell A
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+nohup ./start.sh &
+#shell B 
+cd /Users/rodrigo.de.carvalho/Desktop/devops/estrutura-cucumber-main
+./test.sh
+
+
+##Heroku-dev
+#shell A
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+/usr/local/bin/heroku git:remote -a dev-heroku-java
+#shell B 
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+git push heroku master
+
+##Heroku-qa
+#shell A
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+/usr/local/bin/heroku git:remote -a qa-heroku-java
+#shell B 
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+git push heroku master
+
+
+##Heroku-prod
+#shell A
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+/usr/local/bin/heroku git:remote -a prod-heroku-java
+#shell B 
+cd /Users/rodrigo.de.carvalho/Desktop/devops/ValidadorCPFJava/Validador_Cpf_Java
+git push heroku master
+
